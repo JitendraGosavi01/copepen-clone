@@ -1,13 +1,56 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.pane {
+  display: flex;
+  height: 50vh;
+}
+
+.editor-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  flex-basis: 0;
+  padding: 0.5rem;
+  background-color: hsl(225, 6%, 25%);
+}
+
+.editor-container.collapsed {
+  flex-grow: 0;
+}
+.expand-collapse-button {
+  background: none;
+  margin-left: 0.5rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.editor-container.collapsed .CodeMirror-scroll {
+  position: absolute;
+  overflow: hidden !important;
+}
+
+.top-pane {
+  background-color: hsl(225, 6%, 25%);
+}
+
+.editor-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  background-color: hsl(223, 6%, 15%);
+  color: white;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.CodeMirror {
+  height: 100% !important;
+}
+.code-mirror-wrapper {
+  flex-grow: 1;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
